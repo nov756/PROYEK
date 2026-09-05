@@ -1,0 +1,6 @@
+{
+  "name": "DataStat Platform",
+  "description": "Platform konsultasi AI statistika cerdas dan direktori freelancer ahli olah data skripsi & penelitian.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
