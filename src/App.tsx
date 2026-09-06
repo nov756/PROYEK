@@ -14,6 +14,7 @@ import { HireModal } from './components/HireModal';
 import { RegisterFreelancerModal } from './components/RegisterFreelancerModal';
 import { OrdersModal } from './components/OrdersModal';
 import { OrderSuccessModal } from './components/OrderSuccessModal';
+import { DeploymentGuideModal } from './components/DeploymentGuideModal';
 import { Footer } from './components/Footer';
 import { INITIAL_FREELANCERS, DEMO_SAMPLE_FREELANCERS } from './data/initialFreelancers';
 import { Freelancer, Order, ActivePage, ServicePackage } from './types';
@@ -54,6 +55,7 @@ export default function App() {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [selectedFreelancerForHire, setSelectedFreelancerForHire] = useState<Freelancer | null>(null);
   const [isOrdersOpen, setIsOrdersOpen] = useState(false);
+  const [isDeployGuideOpen, setIsDeployGuideOpen] = useState(false);
   const [successOrder, setSuccessOrder] = useState<Order | null>(null);
   const [toolFilter, setToolFilter] = useState('Semua');
 
@@ -83,17 +85,17 @@ export default function App() {
       const hakFreelancer = price - komisiAdmin;
 
       const konfirmasi = confirm(
-        `Order Layanan dari: ${talentName}\n\n` +
-        `• Total Biaya Klien: Rp ${price.toLocaleString('id-ID')}\n` +
-        `• Potongan Admin (${KOMISI_ADMIN_PERCENT * 100}%): Rp ${komisiAdmin.toLocaleString('id-ID')}\n` +
-        `• Pendapatan Net Freelancer: Rp ${hakFreelancer.toLocaleString('id-ID')}\n\n` +
-        `Lanjutkan ke Sistem Pembayaran?`
+        `Order Asistensi Matkul dari Kating: ${talentName}\n\n` +
+        `• Total Biaya Mahasiswa: Rp ${price.toLocaleString('id-ID')}\n` +
+        `• Potongan Admin Rekber (${KOMISI_ADMIN_PERCENT * 100}%): Rp ${komisiAdmin.toLocaleString('id-ID')}\n` +
+        `• Honor Net Kating: Rp ${hakFreelancer.toLocaleString('id-ID')}\n\n` +
+        `Lanjutkan ke Sistem Rekber WhatsApp Admin?`
       );
 
       if (konfirmasi) {
         // Arahkan ke WhatsApp Admin untuk penampungan dana (Rekber)
         const waMsg = encodeURIComponent(
-          `Halo Admin, saya mau order jasa dari Freelancer: ${talentName} dengan nominal Rp ${price.toLocaleString('id-ID')}. Mohon info instruksi pembayaran.`
+          `Halo Admin DataStat, saya mau order bantuan matkul dari Kating: ${talentName} dengan nominal Rp ${price.toLocaleString('id-ID')}. Mohon info instruksi pembayaran rekber.`
         );
         window.open(`https://wa.me/6281818741970?text=${waMsg}`, '_blank');
       }
@@ -138,6 +140,7 @@ export default function App() {
         onSelectPage={(p) => setActivePage(p)}
         onOpenRegister={() => setIsRegisterOpen(true)}
         onOpenOrders={() => setIsOrdersOpen(true)}
+        onOpenDeployGuide={() => setIsDeployGuideOpen(true)}
         orders={orders}
       />
 
@@ -200,7 +203,13 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Footer onOpenDeployGuide={() => setIsDeployGuideOpen(true)} />
+
+      {/* Deployment Guide Modal for Vercel / Netlify */}
+      <DeploymentGuideModal
+        isOpen={isDeployGuideOpen}
+        onClose={() => setIsDeployGuideOpen(false)}
+      />
 
       {/* Hire Modal */}
       {selectedFreelancerForHire && (

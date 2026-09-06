@@ -21,49 +21,49 @@ interface ServiceCatalogSectionProps {
   onNavigateToAI: () => void;
 }
 
-// Mastered Software Statistics
+// Mastered Software & Course Statistics
 const SOFTWARE_STATS = [
   {
     name: 'SPSS Statistics',
-    category: 'Parametrik & Non-Parametrik',
+    category: 'Praktikum & Uji Hipotesis',
     accuracy: '100%',
-    projects: '520+ Proyek',
-    description: 'Uji hipotesis t-test, ANOVA, regresi linier, regresi logistik, validitas instrumen.',
-  },
-  {
-    name: 'SmartPLS (3 & 4)',
-    category: 'PLS-SEM Laten',
-    accuracy: '99.8%',
-    projects: '410+ Proyek',
-    description: 'Outer/inner model, mediasi, moderasi, bootstrapping 5000 subsample.',
+    projects: '680+ Tugas & Modul',
+    description: 'Uji normalitas, independent t-test, ANOVA, regresi linier, dan interpretasi output praktikum lab.',
   },
   {
     name: 'R & RStudio',
-    category: 'Komputasi & Visualisasi',
+    category: 'Probstat & Komputasi Statistik',
     accuracy: '100%',
-    projects: '280+ Proyek',
-    description: 'Analisis data kompleks, ggplot2 kustom, survival analysis, bio-statistika.',
+    projects: '420+ Script & Tugas',
+    description: 'Pemrograman R, simulasi distribusi probabilitas, visualisasi ggplot2, dan asistensi tugas lab.',
   },
   {
-    name: 'Python (Pandas / SciPy)',
-    category: 'Data Science & Big Data',
+    name: 'Python (Pandas & Scipy)',
+    category: 'Data Science & Statistika Sains',
     accuracy: '99.9%',
-    projects: '190+ Proyek',
-    description: 'Cleaning data skala besar, visualisasi interaktif, NLP teks skripsi.',
+    projects: '310+ Jupyter Notebook',
+    description: 'Data wrangling tugas kuliah, visualisasi interaktif, dan debugging script komputasi statistik.',
   },
   {
-    name: 'IBM SPSS AMOS',
-    category: 'CB-SEM Kovarians',
-    accuracy: '99.5%',
-    projects: '230+ Proyek',
-    description: 'Goodness-of-fit indices (RMSEA, CFI, GFI), Confirmatory Factor Analysis (CFA).',
-  },
-  {
-    name: 'EViews & Stata',
-    category: 'Ekonometrika & Panel',
+    name: 'Microsoft Excel Statistik',
+    category: 'Hitungan Manual & Rumus Cepat',
     accuracy: '100%',
-    projects: '260+ Proyek',
-    description: 'Data panel Fixed/Random effect, uji Hausman, ARIMA time series, VECM.',
+    projects: '550+ PR Mahasiswa',
+    description: 'Tabel distribusi frekuensi, analisis korelasi, rumus ANOVA single-factor, dan penyelesaian PR.',
+  },
+  {
+    name: 'Minitab Statistical',
+    category: 'Statistika Industri & DOE',
+    accuracy: '99.8%',
+    projects: '270+ Modul Lab',
+    description: 'Statistika pengendalian mutu (SPC), design of experiment (DOE), dan modul praktikum teknik.',
+  },
+  {
+    name: 'SmartPLS & SEM',
+    category: 'Tugas Besar & Skripsi Mahasiswa',
+    accuracy: '99.5%',
+    projects: '390+ Tugas Akhir',
+    description: 'Outer/inner model variabel laten, validitas kuesioner, moderasi, mediasi, dan bimbingan Bab 4.',
   },
 ];
 
@@ -75,7 +75,7 @@ export const ServiceCatalogSection: React.FC<ServiceCatalogSectionProps> = ({
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedToolFilter, setSelectedToolFilter] = useState('Semua');
 
-  const toolFilters = ['Semua', 'SPSS', 'SmartPLS', 'R', 'AMOS', 'EViews'];
+  const toolFilters = ['Semua', 'SPSS', 'R', 'Python', 'Excel', 'Minitab', 'SmartPLS'];
 
   const filteredPackages = SERVICE_PACKAGES.filter((pkg) => {
     const matchesSearch =
@@ -97,19 +97,18 @@ export const ServiceCatalogSection: React.FC<ServiceCatalogSectionProps> = ({
         <div className="relative z-10 max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-xs px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-widest text-[#F0F2ED] border border-white/20">
             <Sparkles className="w-3.5 h-3.5 text-[#ECE7D6]" />
-            <span>Platform Olah Data Akademik Terpadu</span>
+            <span>Platform Asistensi Tugas Matkul Statistika Kuliah</span>
           </div>
 
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold font-serif leading-tight tracking-tight text-white">
-            Jasa Olah Data &amp; Konsultasi Penelitian Akademis S1 / S2 / S3
+            Jasa Bantu Matkul Statistika bareng Para Kating Jagoan
           </h1>
 
           <p className="text-sm sm:text-base text-[#F0F2ED] leading-relaxed max-w-2xl font-normal">
-            Solusi Cepat, Akurat, dan Terpercaya untuk Skripsi, Tesis, &amp; Disertasi{' '}
+            Pusing sama tugas mingguan, rumus uji hipotesis, atau modul praktikum lab komputasi? Dapatkan asistensi tugas, bimbingan kuis, dan olah data langsung dari kakak tingkat (mantan asdos &amp; peraih nilai A/A+) dengan tarif ramah kantong mahasiswa &amp; Rekber amanah!{' '}
             <span className="font-semibold text-white">
-              (SPSS | R | Python | SmartPLS | AMOS | EViews)
+              (SPSS | RStudio | Python | Minitab | Excel | SmartPLS)
             </span>
-            . Dilengkapi AI Konsultan metodologi serta sistem rekening bersama (Rekber) bergaransi.
           </p>
 
           <div className="pt-3 flex flex-wrap items-center gap-3">
@@ -118,7 +117,7 @@ export const ServiceCatalogSection: React.FC<ServiceCatalogSectionProps> = ({
               className="inline-flex items-center gap-2 bg-white text-[#5A6B4E] hover:bg-[#F4F3ED] px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold shadow-md transition active:scale-95"
             >
               <Zap className="w-4 h-4 text-[#5A6B4E]" />
-              <span>Tanya AI Consultant</span>
+              <span>Tanya AI Asisten Matkul</span>
             </button>
 
             <button
@@ -126,14 +125,14 @@ export const ServiceCatalogSection: React.FC<ServiceCatalogSectionProps> = ({
               className="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white border border-white/30 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition"
             >
               <FileCheck className="w-4 h-4 text-[#ECE7D6]" />
-              <span>Lihat Demo Portfolio Olah Data</span>
+              <span>Lihat Demo Praktikum &amp; Analisis</span>
             </button>
           </div>
 
           <div className="pt-4 border-t border-white/15 flex flex-wrap items-center gap-6 text-xs text-[#F0F2ED]">
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#ECE7D6]" />
-              <span>Garansi Revisi Dosen</span>
+              <span>Dibimbing Kating (Asdos &amp; Nilai A+)</span>
             </div>
             <div className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-[#ECE7D6]" />
@@ -141,7 +140,7 @@ export const ServiceCatalogSection: React.FC<ServiceCatalogSectionProps> = ({
             </div>
             <div className="flex items-center gap-1.5">
               <Clock className="w-4 h-4 text-[#ECE7D6]" />
-              <span>Pengerjaan Express 1 - 3 Hari</span>
+              <span>Bisa Kilat 6 - 24 Jam</span>
             </div>
           </div>
         </div>

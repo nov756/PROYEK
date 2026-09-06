@@ -17,9 +17,9 @@ export const OrderSuccessModal: React.FC<OrderSuccessModalProps> = ({
 
   const handleWhatsappContact = () => {
     const text = encodeURIComponent(
-      `Halo Kak ${order.freelancerName}, saya ${order.clientName} dari platform DataStat. Saya telah mengajukan pesanan olah data dengan nomor #${order.id} untuk penelitian: "${order.researchTitle}". Mohon konfirmasi pengerjaannya ya Kak. Terima kasih!`
+      `Halo Kak ${order.freelancerName} & Admin DataStat, saya ${order.clientName} dari platform DataStat. Saya telah mengajukan pesanan bantuan matkul/olah data dengan nomor #${order.id} untuk tugas/topik: "${order.researchTitle}". Mohon konfirmasi pengerjaannya ya Kak. Terima kasih!`
     );
-    window.open(`https://wa.me/?text=${text}`, '_blank');
+    window.open(`https://wa.me/6281818741970?text=${text}`, '_blank');
   };
 
   return (

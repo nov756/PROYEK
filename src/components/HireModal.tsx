@@ -77,13 +77,13 @@ export const HireModal: React.FC<HireModalProps> = ({ freelancer, onClose, onSub
         <div className="bg-[#5A6B4E] text-white p-5 sm:p-6 flex items-start justify-between">
           <div>
             <span className="text-[10px] font-semibold uppercase tracking-widest bg-white/15 text-[#F0F2ED] px-2.5 py-0.5 rounded-full border border-white/20 font-sans">
-              Formulir Pengajuan Proyek
+              Formulir Bantuan Matkul &amp; Mentoring Kating
             </span>
             <h3 className="text-xl sm:text-2xl font-bold mt-1.5 text-white font-serif">
-              Hire {freelancer.name}, {freelancer.degree}
+              Order Asistensi Kak {freelancer.name}
             </h3>
             <p className="text-xs text-[#F0F2ED] mt-1">
-              Spesialis: {freelancer.specialties.slice(0, 3).join(', ')} • Rating {freelancer.rating} ★
+              Spesialis: {freelancer.specialties.slice(0, 3).join(', ')} • {freelancer.degree}
             </p>
           </div>
           <button

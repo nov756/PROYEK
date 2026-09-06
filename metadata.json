@@ -1,6 +1,6 @@
 {
   "name": "DataStat Platform",
-  "description": "Platform konsultasi AI statistika cerdas dan direktori freelancer ahli olah data skripsi & penelitian.",
+  "description": "Platform jasa bantu matkul statistika, asistensi praktikum lab komputasi, dan mentoring tugas kuliah oleh para kating dengan sistem Rekber terpercaya.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

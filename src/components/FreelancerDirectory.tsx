@@ -88,17 +88,17 @@ export const FreelancerDirectory: React.FC<FreelancerDirectoryProps> = ({
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
           <div>
             <h2 className="text-xl sm:text-2xl font-bold text-[#2C2C24] font-serif flex items-center gap-2 mb-1">
-              <span>Pilih Expert Data</span>
+              <span>Pilih Kating Mentor Favorit</span>
               <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full border font-sans ${
                 freelancers.length === 0 
                   ? 'bg-[#F9F8F6] text-[#8A8A70] border-[#E8E6DF]' 
                   : 'bg-[#F0F2ED] text-[#5A6B4E] border-[#E8E6DF]'
               }`}>
-                {freelancers.length === 0 ? '0 Terdaftar' : `${filteredFreelancers.length} Tersedia`}
+                {freelancers.length === 0 ? '0 Kating Terdaftar' : `${filteredFreelancers.length} Kating Tersedia`}
               </span>
             </h2>
             <p className="text-xs sm:text-sm text-[#8A8A70]">
-              Hubungi pakar statistika terverifikasi kami untuk hasil terbaik skripsi &amp; penelitian.
+              Pilih kakak tingkat (mantan asdos &amp; peraih nilai A) yang siap membimbing tugas matkul, praktikum lab, &amp; persiapan ujian Anda.
             </p>
           </div>
 
@@ -108,7 +108,7 @@ export const FreelancerDirectory: React.FC<FreelancerDirectoryProps> = ({
               <button
                 onClick={onClearData}
                 className="text-[11px] text-[#8A8A70] hover:text-[#A94A42] flex items-center gap-1 transition px-2 py-1 rounded-md hover:bg-[#F9F8F6]"
-                title="Kosongkan daftar expert untuk pengujian"
+                title="Kosongkan daftar kating untuk pengujian"
               >
                 <Trash2 className="w-3 h-3" />
                 <span>Kosongkan Daftar</span>
@@ -125,8 +125,8 @@ export const FreelancerDirectory: React.FC<FreelancerDirectoryProps> = ({
                 >
                   <option value="recommended">Rekomendasi Terbaik</option>
                   <option value="rating">Rating Tertinggi ★</option>
-                  <option value="priceAsc">Harga Terendah</option>
-                  <option value="projects">Paling Banyak Proyek</option>
+                  <option value="priceAsc">Tarif Terendah (Ramah Kantong)</option>
+                  <option value="projects">Tugas Selesai Terbanyak</option>
                 </select>
               </div>
             )}
@@ -189,13 +189,13 @@ export const FreelancerDirectory: React.FC<FreelancerDirectoryProps> = ({
               <UserPlus className="w-8 h-8" />
             </div>
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#5A6B4E] bg-[#EAECE4] px-3 py-1 rounded-full mb-2 border border-[#D5D8CC]">
-              Roster Belum Terisi
+              Roster Kating Belum Terisi
             </span>
             <h3 className="text-lg sm:text-xl font-bold text-[#2C2C24] font-serif mb-2">
-              Daftar Expert Masih Kosong
+              Daftar Kating Mentor Masih Kosong
             </h3>
             <p className="text-xs sm:text-sm text-[#8A8A70] max-w-md leading-relaxed mb-6">
-              Saat ini belum ada mitra konsultan atau pakar olah data yang terdaftar di platform DataStat. Anda menguasai SPSS, SmartPLS, R, Python, AMOS, atau EViews? Daftarkan diri Anda sekarang untuk menjadi mitra ahli pertama kami!
+              Saat ini belum ada Kating Mentor yang terdaftar di platform DataStat. Kamu mahasiswa tingkat akhir / asdos yang jago Statistika, SPSS, R, Python, atau Minitab? Yuk gabung jadi Kating Mentor dan dapatkan uang saku tambahan dengan membantu adik tingkatmu!
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               {onOpenRegister && (
@@ -205,7 +205,7 @@ export const FreelancerDirectory: React.FC<FreelancerDirectoryProps> = ({
                   className="bg-[#5A6B4E] hover:bg-[#4A5940] text-white px-6 py-2.5 rounded-full text-xs font-bold shadow-md shadow-[#5a6b4e26] transition active:scale-95 flex items-center gap-2 cursor-pointer"
                 >
                   <UserPlus className="w-4 h-4" />
-                  <span>Daftar Jadi Mitra Expert</span>
+                  <span>Daftar Jadi Kating Mentor</span>
                 </button>
               )}
               {onLoadDemoData && (
@@ -215,7 +215,7 @@ export const FreelancerDirectory: React.FC<FreelancerDirectoryProps> = ({
                   className="bg-[#F4F3ED] hover:bg-[#EAE8DF] text-[#2C2C24] px-5 py-2.5 rounded-full text-xs font-semibold border border-[#E8E6DF] transition flex items-center gap-1.5 cursor-pointer"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-[#5A6B4E]" />
-                  <span>Muat Contoh Data Expert (Demo)</span>
+                  <span>Muat Contoh Kating Mentor (Demo)</span>
                 </button>
               )}
             </div>

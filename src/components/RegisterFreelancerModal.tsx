@@ -71,11 +71,11 @@ export const RegisterFreelancerModal: React.FC<RegisterFreelancerModalProps> = (
           <div>
             <div className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-widest bg-white/15 text-[#F0F2ED] px-2.5 py-0.5 rounded-full border border-white/20 font-sans mb-1.5 w-fit">
               <Award className="w-3.5 h-3.5 text-[#ECE7D6]" />
-              <span>Gabung Mitra DataStat</span>
+              <span>Gabung Kating Mentor DataStat</span>
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white font-serif">Daftar Jadi Freelancer Expert</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-white font-serif">Daftar Jadi Kating Mentor</h3>
             <p className="text-xs text-[#F0F2ED] mt-1">
-              Bantu mahasiswa & akademisi menyelesaikan olah data dengan honor per proyek yang kompetitif.
+              Bantu adik tingkat memahami praktikum, kuis, dan tugas matkul statistika dengan honor per tugas yang transparan via Rekber.
             </p>
           </div>
           <button

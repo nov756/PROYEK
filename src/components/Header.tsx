@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserPlus, ClipboardList, Sparkles, LayoutGrid, FileLineChart, HelpCircle } from 'lucide-react';
+import { UserPlus, ClipboardList, Sparkles, LayoutGrid, FileLineChart, HelpCircle, Globe } from 'lucide-react';
 import { Order, ActivePage } from '../types';
 
 interface HeaderProps {
@@ -7,6 +7,7 @@ interface HeaderProps {
   onSelectPage: (page: ActivePage) => void;
   onOpenRegister: () => void;
   onOpenOrders: () => void;
+  onOpenDeployGuide?: () => void;
   orders: Order[];
 }
 
@@ -15,6 +16,7 @@ export const Header: React.FC<HeaderProps> = ({
   onSelectPage,
   onOpenRegister,
   onOpenOrders,
+  onOpenDeployGuide,
   orders,
 }) => {
   return (
@@ -32,12 +34,12 @@ export const Header: React.FC<HeaderProps> = ({
               <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-[#2C2C24] font-serif">
                 DataStat
               </h1>
-              <span className="text-[#8A8A70] font-sans text-[10px] uppercase tracking-widest hidden sm:inline-block font-semibold bg-[#F4F3ED] px-2 py-0.5 rounded-full border border-[#E8E6DF]">
-                Looker Portfolio &amp; App
+              <span className="text-[#5A6B4E] font-sans text-[10px] uppercase tracking-widest hidden sm:inline-block font-bold bg-[#F0F2ED] px-2.5 py-0.5 rounded-full border border-[#E8E6DF]">
+                Kating Mentor &amp; Asistensi
               </span>
             </div>
             <p className="text-xs text-[#8A8A70] hidden md:block">
-              Jasa Olah Data &amp; Konsultasi Penelitian Akademis S1/S2/S3
+              Jasa Bantu Tugas &amp; Praktikum Matkul Statistika bareng Kating
             </p>
           </div>
         </div>
@@ -53,7 +55,7 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             <LayoutGrid className="w-3.5 h-3.5 text-[#5A6B4E]" />
-            <span>1. Beranda &amp; Katalog</span>
+            <span>1. Katalog Matkul &amp; Layanan</span>
           </button>
 
           <button
@@ -65,7 +67,7 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             <FileLineChart className="w-3.5 h-3.5 text-[#5A6B4E]" />
-            <span>2. Demo Portfolio Analisis</span>
+            <span>2. Demo Praktikum &amp; Analisis</span>
           </button>
 
           <button
@@ -77,20 +79,31 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             <HelpCircle className="w-3.5 h-3.5 text-[#5A6B4E]" />
-            <span>3. Konsultasi &amp; Order Rekber</span>
+            <span>3. Order Bantuan Kating (Rekber)</span>
           </button>
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          {onOpenDeployGuide && (
+            <button
+              onClick={onOpenDeployGuide}
+              className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-[#5A6B4E] bg-[#F0F2ED] hover:bg-[#E4E7DF] border border-[#E8E6DF] transition"
+              title="Panduan Publikasi Gratis ke Vercel atau Netlify"
+            >
+              <Globe className="w-3.5 h-3.5" />
+              <span>Deploy Vercel/Netlify</span>
+            </button>
+          )}
+
           {orders.length > 0 && (
             <button
               id="btn-view-orders"
               onClick={onOpenOrders}
               className="relative inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold bg-[#F4F3ED] hover:bg-[#EAE8DF] text-[#2C2C24] border border-[#E8E6DF] transition shadow-xs"
-              title="Lihat status pesanan olah data Anda"
+              title="Lihat status tugas / pesanan Anda"
             >
               <ClipboardList className="w-3.5 h-3.5 text-[#5A6B4E]" />
-              <span className="hidden sm:inline">Pesanan Saya</span>
+              <span className="hidden sm:inline">Tugas Saya</span>
               <span className="bg-[#5A6B4E] text-white font-bold px-1.5 py-0.2 rounded-full text-[10px]">
                 {orders.length}
               </span>
@@ -100,10 +113,10 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             id="btn-register-freelancer"
             onClick={onOpenRegister}
-            className="inline-flex items-center gap-1.5 bg-[#5A6B4E] hover:bg-[#4a5840] text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold shadow-md shadow-[#5a6b4e33] transition active:scale-95"
+            className="inline-flex items-center gap-1.5 bg-[#5A6B4E] hover:bg-[#4a5840] text-white px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold shadow-md shadow-[#5a6b4e33] transition active:scale-95"
           >
             <UserPlus className="w-4 h-4 text-white" />
-            <span>Daftar Mitra</span>
+            <span>Gabung Jadi Kating</span>
           </button>
         </div>
       </div>
@@ -116,7 +129,7 @@ export const Header: React.FC<HeaderProps> = ({
             activePage === 'home' ? 'bg-[#5A6B4E] text-white font-bold' : 'text-[#8A8A70]'
           }`}
         >
-          1. Katalog
+          1. Katalog Matkul
         </button>
         <button
           onClick={() => onSelectPage('portfolio')}
@@ -124,7 +137,7 @@ export const Header: React.FC<HeaderProps> = ({
             activePage === 'portfolio' ? 'bg-[#5A6B4E] text-white font-bold' : 'text-[#8A8A70]'
           }`}
         >
-          2. Demo Analisis
+          2. Demo Praktikum
         </button>
         <button
           onClick={() => onSelectPage('order')}
@@ -132,7 +145,7 @@ export const Header: React.FC<HeaderProps> = ({
             activePage === 'order' ? 'bg-[#5A6B4E] text-white font-bold' : 'text-[#8A8A70]'
           }`}
         >
-          3. Order &amp; Rekber
+          3. Order Rekber
         </button>
       </div>
     </header>
